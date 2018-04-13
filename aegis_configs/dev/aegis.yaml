@@ -1,0 +1,22 @@
+app:
+  name: Example Aegis App2
+  keepBuildFiles: false
+  
+aws:
+  region: us-east-1
+lambda:
+  description: An example Aegis app2
+  SourceZip: hello.zip
+  functionName: aegis_example
+  # A default execution role will be created for you, but you can always use a specific one.
+  role: arn:aws:iam::355794188675:role/lambda_basic_execution
+api:
+  name: Example Aegis API2
+  description: An example API2
+  # A "prod" stage will be created2 automatically. You can define stages here as well as stage variables.
+  # These stage variables are passed in the event message to your Lambda function.
+  stages:
+    dev:
+      name: dev
+      variables:
+        env: dev
